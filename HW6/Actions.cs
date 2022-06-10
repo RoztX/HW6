@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW6
 {
+    // HotKey Ctrl + K + D to clean tabulation in code
     public class Actions
     {
         public Result First()
@@ -20,6 +21,8 @@ namespace HW6
         }
         public Result Third()
         {
+            // Where is LogType Error?
+            // Why it wasn't logged in console?
             return new Result { Status = false, Message = "I broke a logic" };
         }
 

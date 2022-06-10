@@ -14,6 +14,7 @@ namespace HW6
         static Logger() { }
 
         private Logger() { }
+        // mistake, message
         public void Log(DateTime dateTime, LogType logType, string messege)
         {
             var fullMessege = $"{dateTime}: {logType}: {messege}";
@@ -22,6 +23,10 @@ namespace HW6
             Logs[index] = fullMessege;
         }
 
+
+        // You can convert in auto-property, like this
+        // public static Logger Instance { get; } = new();
+        // And delete private field
         public static Logger Instance
         {
             get { return _instance; }
