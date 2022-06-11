@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace HW6
 {
-    internal class Starter
+    public class Starter
     {
         public void Run()
         {
-            StringBuilder container = new StringBuilder();
-            Actions actions = new Actions();
-            for(int i = 0; i < 100; i++)
+            var container = new StringBuilder();
+            var actions = new Actions();
+            for (var i = 0; i < 100; i++)
             {
                 Random random = new Random();
                 switch (random.Next(0, 3))
@@ -27,9 +27,11 @@ namespace HW6
                         actions.Third();
                         break;
                 }
-                container.Append(Logger.Instance.Logs[i]);
+
+                container.Append(Logger.Instance.Logs[i] + "s\n");
             }
-            File.WriteAllText("log.txt",container.ToString());
+
+            File.WriteAllText("log.txt", container.ToString());
         }
     }
 }

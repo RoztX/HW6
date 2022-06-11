@@ -11,19 +11,19 @@ namespace HW6
         public Result First()
         {
             Logger.Instance.Log(DateTime.Now, LogType.Info, $"{nameof(First)}");
-            return new Result {Status = true };
+            return new Result { Status = true };
         }
+
         public Result Second()
         {
             Logger.Instance.Log(DateTime.Now, LogType.Warning, $"{nameof(Second)}");
             return new Result { Status = true };
         }
+
         public Result Third()
         {
+            Logger.Instance.Log(DateTime.Now, LogType.Error, $"{nameof(Third)}");
             return new Result { Status = false, Message = "I broke a logic" };
         }
-
-
-
     }
 }

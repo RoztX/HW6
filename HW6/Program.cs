@@ -1,4 +1,4 @@
 ﻿using HW6;
 
-Starter starter = new Starter();
+var starter = new Starter();
 starter.Run();

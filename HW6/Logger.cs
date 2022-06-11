@@ -10,25 +10,23 @@ namespace HW6
     {
         public string[] Logs = new string[100];
         private static readonly Logger _instance = new Logger();
-        
-        static Logger() { }
 
-        private Logger() { }
-        public void Log(DateTime dateTime, LogType logType, string messege)
+        static Logger()
         {
-            var fullMessege = $"{dateTime}: {logType}: {messege}";
+        }
+
+        private Logger()
+        {
+        }
+
+        public void Log(DateTime dateTime, LogType logType, string message)
+        {
+            var fullMessege = $"{dateTime}: {logType}: {message}";
             Console.WriteLine(fullMessege);
             int index = Array.IndexOf(Logs, null);
             Logs[index] = fullMessege;
         }
 
-        public static Logger Instance
-        {
-            get { return _instance; }
-        }
-        public string[] GetLogs
-        {
-            get { return Logs; }
-        }
+        public static Logger Instance { get; } = new();
     }
 }
